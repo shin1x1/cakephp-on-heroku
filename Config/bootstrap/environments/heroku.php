@@ -30,7 +30,7 @@ Environment::configure('heroku', false, [
     ]);
 
     // Cache settings
-    Cache::config('default', array(
+    Cache::config('default', [
         'engine' => 'Memcached',
         'prefix' => 'mc_',
         'duration' => '+7 days',
@@ -40,10 +40,12 @@ Environment::configure('heroku', false, [
         'login' => getenv('MEMCACHIER_USERNAME'),
         'password' => getenv('MEMCACHIER_PASSWORD'),
         'serialize' => 'php'
-    ));
+    ]);
 
     // Session Settings
-    Configure::write('Session', array(
-        'defaults' => 'cache'
-    ));
+    Configure::write('Session', [
+        'defaults' => 'cache',
+    ]);
+
+    var_dump(Configure::read('Session'));
 });
