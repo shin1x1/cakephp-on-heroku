@@ -31,14 +31,14 @@ Environment::configure('heroku', false, [
 
     // Cache settings
     Cache::config('default', array(
-            'engine' => 'Memcached',
-            'prefix' => 'mc_',
-            'duration' => '+7 days',
-            'servers' => explode(',', <MEMCACHIER_SERVERS>),
-    'compress' => false,
-    'persistent' => 'memcachier',
-    'login' => <MEMCACHIER_USERNAME>,
-    'password' => <MEMCACHIER_PASSWORD>,
-    'serialize' => 'php'
-));
+        'engine' => 'Memcached',
+        'prefix' => 'mc_',
+        'duration' => '+7 days',
+        'servers' => explode(',', getenv('MEMCACHIER_SERVERS')),
+        'compress' => false,
+        'persistent' => 'memcachier',
+        'login' => getenv('MEMCACHIER_USERNAME'),
+        'password' => getenv('MEMCACHIER_PASSWORD'),
+        'serialize' => 'php'
+    ));
 });

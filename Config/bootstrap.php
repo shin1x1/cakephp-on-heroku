@@ -12,11 +12,11 @@
  * @package       app.Config
  * @since         CakePHP(tm) v 0.10.8.2117
  */
-require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 // Setup a 'default' cache configuration for use in the application.
 Cache::config('default', array('engine' => 'File'));
-include dirname(__FILE__) . DS . 'bootstrap' . DS . 'environments.php';
+include __DIR__ . '/bootstrap/environments.php';
 
 /**
  * The settings below can be used to set additional paths to models, views and controllers.
