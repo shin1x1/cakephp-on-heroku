@@ -30,11 +30,10 @@ Environment::configure('heroku', false, [
     ]);
 
     // Cache settings
-    if (empty(getenv('REDISCLOUD_URL'))) {
-        throw new CakeException('no REDISCLOUD_URL environment variable');
+    if (empty(getenv('REDISTOGO_URL'))) {
+        throw new CakeException('no REDISTOGO_URL environment variable');
     }
-    $url = parse_url(getenv('REDISCLOUD_URL'));
-    var_dump($url);
+    $url = parse_url(getenv('REDISTOGO_URL'));
     Cache::config('default', [
         'engine' => 'Redis',
         'server' => $url['host'],
