@@ -1,0 +1,6 @@
+{
+    "require": {
+        "cakephp/cakephp": "~2.5",
+        "phpunit/phpunit": "~3.7"
+    }
+}
