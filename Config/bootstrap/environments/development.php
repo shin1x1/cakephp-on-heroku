@@ -34,4 +34,7 @@ Environment::configure('development', true, [
         'password' => '',
         'database' => 'app_test',
     ]);
+
+    // Cache settings
+    Cache::config('default', array('engine' => 'File'));
 });

@@ -15,7 +15,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 // Setup a 'default' cache configuration for use in the application.
-Cache::config('default', array('engine' => 'File'));
+//Cache::config('default', array('engine' => 'File'));
 include __DIR__ . '/bootstrap/environments.php';
 
 /**

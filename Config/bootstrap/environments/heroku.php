@@ -30,15 +30,17 @@ Environment::configure('heroku', false, [
     ]);
 
     // Cache settings
+    if (empty(getenv('REDISCLOUD_URL'))) {
+        throw new CakeException('no REDISCLOUD_URL environment variable');
+    }
+    $url = parse_url(getenv('REDISCLOUD_URL'));
+    var_dump($url);
     Cache::config('default', [
-        'engine' => 'Memcached',
-        'prefix' => 'mc_',
-        'duration' => '+7 days',
-        'servers' => explode(',', getenv('MEMCACHIER_SERVERS')),
+        'engine' => 'Redis',
+        'server' => $url['host'],
         'compress' => false,
-        'persistent' => 'memcachier',
-        'login' => getenv('MEMCACHIER_USERNAME'),
-        'password' => getenv('MEMCACHIER_PASSWORD'),
+        'login' => $url['user'],
+        'password' => $url['pass'],
         'serialize' => 'php'
     ]);
 
@@ -46,6 +48,4 @@ Environment::configure('heroku', false, [
     Configure::write('Session', [
         'defaults' => 'cache',
     ]);
-
-    var_dump(Configure::read('Session'));
 });
