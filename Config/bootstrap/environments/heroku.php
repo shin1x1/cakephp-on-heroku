@@ -38,8 +38,8 @@ Environment::configure('heroku', false, [
     Cache::config('default', [
         'engine' => 'Redis',
         'server' => $url['host'],
+        'port' => $url['port'],
         'compress' => false,
-        'login' => $url['user'],
         'password' => $url['pass'],
         'serialize' => 'php'
     ]);
