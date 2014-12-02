@@ -41,4 +41,9 @@ Environment::configure('heroku', false, [
         'password' => getenv('MEMCACHIER_PASSWORD'),
         'serialize' => 'php'
     ));
+
+    // Session Settings
+    Configure::write('Session', array(
+        'defaults' => 'cache'
+    ));
 });
