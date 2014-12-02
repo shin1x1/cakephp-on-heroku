@@ -16,6 +16,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 
 // Setup a 'default' cache configuration for use in the application.
 Cache::config('default', array('engine' => 'File'));
+include dirname(__FILE__) . DS . 'bootstrap' . DS . 'environments.php';
 
 /**
  * The settings below can be used to set additional paths to models, views and controllers.
@@ -86,6 +87,7 @@ Configure::write('Dispatcher.filters', array(
 /**
  * Configures default file logging options
  */
+/* Setup this configures in environment files
 App::uses('CakeLog', 'Log');
 CakeLog::config('debug', array(
     'engine' => 'File',
@@ -97,3 +99,4 @@ CakeLog::config('error', array(
     'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
     'file' => 'error',
 ));
+*/

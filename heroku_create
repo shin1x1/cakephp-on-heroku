@@ -1,0 +1,8 @@
+#!/bin/sh
+
+heroku create shin1x1-cakephp
+heroku addons:add heroku-postgresql
+heroku addons:add papertrail
+heroku addons:add memcachier
+
+heroku config:set CAKE_ENV=heroku

@@ -1,6 +1,7 @@
 {
     "require": {
         "cakephp/cakephp": "~2.5",
-        "phpunit/phpunit": "~3.7"
+        "phpunit/phpunit": "~3.7",
+        "josegonzalez/cakephp-environments": "1.0.0"
     }
 }
