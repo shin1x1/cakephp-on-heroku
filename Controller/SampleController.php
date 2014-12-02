@@ -13,6 +13,7 @@ class SampleController extends AppController {
         if (empty($counter)) {
             $counter = 0;
         }
+        var_dump($_SESSION);
 
         $counter++;
         $this->Session->write('counter', $counter);
